@@ -25,7 +25,12 @@ function App() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           />
-          <button>Ajouter la tâche</button>
+          <button onClick={() => {
+            if (newTask.trim() !== '') {
+              setTasks([...tasks, newTask]);
+              setNewTask('');
+            }
+          }}>Ajouter la tâche</button>
         </section>
       </main>
     </>
