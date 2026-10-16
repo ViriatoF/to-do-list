@@ -1,6 +1,10 @@
 import './App.css'
+import {useState} from "react"
 
 function App() {
+
+  const[newTask, setNewTask]= useState('');
+  const[tasks, setTasks]= useState([]);
 
   return (
     <>
@@ -9,10 +13,19 @@ function App() {
       </header>
       <main>
         <section>
-          liste
+          <h2>Liste des tâches</h2>
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={index}>{task}</li>
+            ))}
+          </ul>
         </section>
         <section>
-          <input type="text" />
+          <input type="text" 
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button>Ajouter la tâche</button>
         </section>
       </main>
     </>
