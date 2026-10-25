@@ -44,25 +44,35 @@ form {
   }
 }
 
-ul li {
+ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 1em;
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 1em;
 
-  & button {
-    padding: 1em 2em;
-    border-radius: 8px;
-    border-style: none;
-    background-color: transparent;
-    color: red;
-    border: 1px solid red;
-    cursor: pointer;
-  }
-  & button:hover {
-    color: white;
-    background-color: red;
-    border: 1px solid red;
-    cursor: pointer;
+  & li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+
+    & button {
+      padding: 1em 2em;
+      border-radius: 8px;
+      border-style: none;
+      background-color: transparent;
+      color: red;
+      border: 1px solid red;
+      cursor: pointer;
+    }
+    & button:hover {
+      color: white;
+      background-color: red;
+      border: 1px solid red;
+      cursor: pointer;
+    }
   }
 }
