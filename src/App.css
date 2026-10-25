@@ -76,3 +76,7 @@ ul {
     }
   }
 }
+
+.isChecked {
+  text-decoration: line-through;
+}
