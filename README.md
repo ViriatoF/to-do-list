@@ -1,16 +1,96 @@
-# React + Vite
+📝 React To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une simple application To-Do List en React et Vite, testée avec Vitest.
 
-Currently, two official plugins are available:
+✨ Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+➕ Ajout de tâches : Saisie d'une tâche via formulaire avec validation (pas d'ajout vide) et réinitialisation automatique du champ.
 
-## React Compiler
+☑️ Statut terminé : Coche de cases pour marquer les tâches comme accomplies avec style barré dynamique (.isChecked).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+❌ Suppression : Suppression instantanée de n'importe quelle tâche de la liste.
 
-## Expanding the ESLint configuration
+🧪 Tests automatisés : Suite de tests unitaires et d'intégration validant le rendu, et la suppression.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Technologies utilisées
+
+React 19 — Bibliothèque UI
+
+Vite
+
+Vitest 
+
+React Testing Library
+
+jsdom
+
+🚀 Installation et démarrage
+
+1. Cloner le projet
+
+git clone https://github.com/ViriatoF/to-do-list.git
+cd to-do-list
+
+
+2. Installer les dépendances
+
+npm install
+
+
+3. Lancer l'application en développement
+
+npm run dev
+
+
+L'application sera accessible par défaut sur http://localhost:5173.
+
+🧪 Tests
+
+Les tests sont exécutés avec Vitest et simulent le comportement utilisateur réel.
+
+Lancer les tests en mode veille (watch mode)
+
+npm test
+# ou directement
+npx vitest
+
+
+Lancer les tests une seule fois (mode CI)
+
+npx vitest run
+
+
+📁 Structure du projet
+
+├── src/
+│   ├── App.css           
+│   ├── App.jsx           
+│   ├── App.test.jsx      
+│   ├── main.jsx          
+│   └── setupTests.js     
+├── index.html
+├── vite.config.js        
+├── package.json
+└── README.md
+
+
+⚙️ Configuration Vitest (vite.config.js)
+
+Pour que les tests React fonctionnent avec le DOM virtuel, le fichier vite.config.js est configuré comme suit :
+
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+  },
+});
+
+
+📝 Licence
+
+Projet sous licence MIT — libre d'utilisation et de modification.
