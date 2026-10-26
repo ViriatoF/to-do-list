@@ -1,4 +1,4 @@
-📝 # React To-Do List
+# 📝 React To-Do List
 
 Une simple application To-Do List en React et Vite, testée avec Vitest.
 
