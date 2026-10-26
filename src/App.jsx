@@ -19,13 +19,17 @@ function App() {
     setInputValue('');
   };
 
-  const toggleTask = (indexClique) => {
+  function toggleTask(index) {
     setTasks(
       tasks.map((task, i) =>
-        i === indexClique ? { ...task, isChecked: !task.isChecked } : task,
+        i === index ? { ...task, isChecked: !task.isChecked } : task,
       ),
     );
-  };
+  }
+
+  function deleteTask(index) {
+    setTasks(tasks.filter((_, i) => i !== index));
+  }
 
   return (
     <section>
@@ -52,7 +56,9 @@ function App() {
               <span className={task.isChecked ? 'isChecked' : ''}>
                 {task.texte}
               </span>
-              <button type="button">X</button>
+              <button type="button" onClick={() => deleteTask(index)}>
+                X
+              </button>
             </li>
           );
         })}
