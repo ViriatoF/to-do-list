@@ -89,3 +89,5 @@ setupFiles: './src/setupTests.js',
 📝 Licence
 
 Projet sous licence MIT — libre d'utilisation et de modification.
+
+[![CI](https://github.com/ViriatoF/to-do-list/actions/workflows/ci.yml/badge.svg)](https://github.com/ViriatoF/to-do-list/actions/workflows/ci.yml)
