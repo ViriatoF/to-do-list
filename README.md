@@ -18,7 +18,7 @@ React 19 — Bibliothèque UI
 
 Vite
 
-Vitest 
+Vitest
 
 React Testing Library
 
@@ -31,16 +31,13 @@ jsdom
 git clone https://github.com/ViriatoF/to-do-list.git
 cd to-do-list
 
-
 2. Installer les dépendances
 
 npm install
 
-
 3. Lancer l'application en développement
 
 npm run dev
-
 
 L'application sera accessible par défaut sur http://localhost:5173.
 
@@ -51,28 +48,27 @@ Les tests sont exécutés avec Vitest et simulent le comportement utilisateur r�
 Lancer les tests en mode veille (watch mode)
 
 npm test
-# ou directement
-npx vitest
 
+# ou directement
+
+npx vitest
 
 Lancer les tests une seule fois (mode CI)
 
 npx vitest run
 
-
 📁 Structure du projet
 
 ├── src/
-│   ├── App.css           
-│   ├── App.jsx           
-│   ├── App.test.jsx      
-│   ├── main.jsx          
-│   └── setupTests.js     
+│ ├── App.css  
+│ ├── App.jsx  
+│ ├── App.test.jsx  
+│ ├── main.jsx  
+│ └── setupTests.js  
 ├── index.html
-├── vite.config.js        
+├── vite.config.js  
 ├── package.json
 └── README.md
-
 
 ⚙️ Configuration Vitest (vite.config.js)
 
@@ -82,14 +78,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.js',
-  },
+plugins: [react()],
+test: {
+globals: true,
+environment: 'jsdom',
+setupFiles: './src/setupTests.js',
+},
 });
-
 
 📝 Licence
 
